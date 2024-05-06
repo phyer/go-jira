@@ -83,7 +83,7 @@ type UserSearchF func(UserSearch) UserSearch
 // TODO Double check this method if this works as expected, is using the latest API and the response is complete
 // This double check effort is done for v2 - Remove this two lines if this is completed.
 func (s *UserService) Get(ctx context.Context, accountId string) (*User, *Response, error) {
-	apiEndpoint := fmt.Sprintf("/rest/api/2/user?accountId=%s", accountId)
+	apiEndpoint := fmt.Sprintf("/rest/api/2/user?username=%s", accountId)
 	req, err := s.client.NewRequest(ctx, http.MethodGet, apiEndpoint, nil)
 	if err != nil {
 		return nil, nil, err
